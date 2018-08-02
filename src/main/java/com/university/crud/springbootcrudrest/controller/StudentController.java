@@ -5,14 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.university.crud.springbootcrudrest.model.Student;
 
 @RestController
+@RequestMapping("/student")
 public class StudentController {
 
-	@GetMapping("/:id")
+	@GetMapping("/{id}")
 	public Student getStudent(@PathVariable("id") String id) {
 
 		return new Student();
@@ -28,7 +30,7 @@ public class StudentController {
 		return obj;
 	}
 
-	@DeleteMapping("/:id")
+	@DeleteMapping("/{id}")
 	public void deleteStudent(@PathVariable("id") int id) {
 
 	}
