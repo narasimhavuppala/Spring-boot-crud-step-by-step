@@ -17,3 +17,8 @@ mvn spring-boot:run
 # Datasource creation
 	 - @ Bean for Data Source
 	 - Embedded
+#  Log level Details
+	 - debug=false
+	 - logging.file=application.log
+	 - logging.level.org.springframework=INFO
+	 - logging.level.org.org.hibernate=WARN
