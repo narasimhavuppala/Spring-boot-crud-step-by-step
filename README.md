@@ -22,3 +22,19 @@ mvn spring-boot:run
 	 - logging.file=application.log
 	 - logging.level.org.springframework=INFO
 	 - logging.level.org.org.hibernate=WARN
+#   Actuator Endpoints
+		
+		- "http://localhost:8080/myapp/actuator"
+		- "http://localhost:8080/myapp/actuator/health"
+		- "http://localhost:8080/myapp/actuator/info"
+# Spring Annotations
+		- @Component
+		- @RestController
+		- @Controller(Deprecated)
+		- @Service
+		- @Repository
+		- @SpringBootApplication
+		- @Bean
+		- @Autowired
+		- @Query
+		- @Transactional
