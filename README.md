@@ -5,11 +5,16 @@ mvn spring-boot:run
 # Rest Endpoints
     - HTTP Methods
 	   - GET
+	   		- Pathparam
+	   		- RequestParam
 	   - PUT
 	   - POST
 	   - DELETE
 	 - HTTP Status codes
 	 - Mediatypes
+	 	- Produces
+	 	- Consumes
+	 	
 # Swagger
 	- Add dependencies in pom.xml
 	- Add @ Bean for DocketAPI
@@ -38,3 +43,7 @@ mvn spring-boot:run
 		- @Autowired
 		- @Query
 		- @Transactional
+# Dev tools
+  			
+	- HMR(Hot Module Replacement)
+  			
