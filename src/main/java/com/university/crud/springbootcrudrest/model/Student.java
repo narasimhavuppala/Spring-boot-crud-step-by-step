@@ -1,7 +1,5 @@
 package com.university.crud.springbootcrudrest.model;
 
-import java.time.LocalDate;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,7 +8,7 @@ public class Student {
 	@Id
 	int id;
 	String name;
-	LocalDate dob;
+	String dob;
 	public int getId() {
 		return id;
 	}
@@ -23,10 +21,10 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public LocalDate getDob() {
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(LocalDate dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	

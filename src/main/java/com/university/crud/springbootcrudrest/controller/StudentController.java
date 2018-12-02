@@ -1,6 +1,7 @@
 package com.university.crud.springbootcrudrest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,14 +20,16 @@ public class StudentController {
 	@Autowired
 	private StudentService service;
 
-	@GetMapping("/{id}")
+	@GetMapping(value="/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public Student getStudent(@PathVariable("id") int id) {
+		System.out.println(id);
 
 		return service.getStudent(id);
 	}
 
 	@PostMapping("/")
-	public void pseristStudent(Student obj) {
+	public Student save(Student obj) {
+		return service.save(obj);
 
 	}
 

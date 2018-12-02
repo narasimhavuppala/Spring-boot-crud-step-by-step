@@ -2,6 +2,7 @@ package com.university.crud.springbootcrudrest.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.university.crud.springbootcrudrest.model.Student;
 import com.university.crud.springbootcrudrest.repository.StudentRepository;
@@ -10,11 +11,17 @@ import com.university.crud.springbootcrudrest.repository.StudentRepository;
 public class StudentService {
 
 	@Autowired
-	StudentRepository repository;
+	private StudentRepository repository;
 
 	public Student getStudent(int id) {
 
 		return repository.getOne(id);
+
+	}
+	@Transactional
+	public Student save(Student obj) {
+
+		return repository.save(obj);
 
 	}
 
