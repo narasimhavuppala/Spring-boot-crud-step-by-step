@@ -46,4 +46,14 @@ mvn spring-boot:run
 # Dev tools
   			
 	- HMR(Hot Module Replacement)
+# YAML Usage
+    - Spring profiles active
+    - Server port
+    - Conext path
+    - usage of tab
+
+# Reading Properties Files inside the progra
+	- 	
+	@Autowired
+	Environment env;
   			

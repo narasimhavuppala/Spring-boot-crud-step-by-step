@@ -1,0 +1,22 @@
+server:
+  address: 8085
+  servlet:
+    context-path: myapp
+  
+logging:
+  file: applicaation.log
+spring:
+  datasource:
+    username: 
+    password: 
+    url: 
+    driver-class-name: 
+    
+  profiles:
+    active:
+    - dev
+    datasource:
+      username: 
+      password: 
+      url: 
+      driver-class-name: 
