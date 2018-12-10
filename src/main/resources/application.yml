@@ -1,22 +1,29 @@
-server:
-  address: 8085
-  servlet:
-    context-path: myapp
-  
+debug: false
 logging:
-  file: applicaation.log
+  file: application.log
+server:
+  servlet:
+    context-path: /myapp
+---
 spring:
+  profiles: dev
   datasource:
+    url: 
     username: 
     password: 
-    url: 
-    driver-class-name: 
+debug: false
+server:
+  port: 8089
     
-  profiles:
-    active:
-    - dev
-    datasource:
-      username: 
-      password: 
-      url: 
-      driver-class-name: 
+---
+spring:
+  profiles: test
+debug: false
+server:
+  port: 8091
+---
+spring:
+  profiles: prod
+debug: false
+server:
+  port: 8091
