@@ -15,7 +15,7 @@ mvn spring-boot:run
 	 	- Produces
 	 	- Consumes
 	 	
-# Swagger
+# Swagger 
 	- Add dependencies in pom.xml
 	- Add @ Bean for DocketAPI
 	- open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
