@@ -2,7 +2,7 @@
 mvn spring-boot:run
 # features
 
-# Rest Endpoints
+# Rest Endpoints 
     - HTTP Methods
 	   - GET
 	   		- Pathparam
