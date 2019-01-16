@@ -4,6 +4,12 @@ logging:
 server:
   servlet:
     context-path: /myapp
+  port: 8090
+spring:
+  jpa:
+    show-sql: true
+
+      
 ---
 spring:
   profiles: dev
