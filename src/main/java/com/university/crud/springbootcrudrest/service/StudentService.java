@@ -24,7 +24,10 @@ public class StudentService {
 	}
 
 	@Transactional
-	public Student save(Student obj) {
+	public Student save(Student obj) throws Exception {
+		if(obj.getId()==0) {
+			throw new Exception("id is not valid");
+		}
 
 		return repository.save(obj);
 

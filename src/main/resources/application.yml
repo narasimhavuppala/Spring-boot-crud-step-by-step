@@ -1,6 +1,7 @@
 debug: false
+trace: false
 logging:
-  file: application.log
+  file: application.log 
 server:
   servlet:
     context-path: /myapp
@@ -8,19 +9,29 @@ server:
 spring:
   jpa:
     show-sql: true
-
+management:
+  endpoint:
+    beans:
+      enabled: true
       
 ---
 spring:
   profiles: dev
   datasource:
-    url: 
-    username: 
-    password: 
+    url: jdbc:mysql://localhost:3306/mysql
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 debug: false
 server:
   port: 8089
-    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - env,info,beans
 ---
 spring:
   profiles: test

@@ -2,11 +2,9 @@ package com.university.crud.springbootcrudrest.spring;
 
 import javax.sql.DataSource;
 
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -18,18 +16,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class AppConfiguration {
 
-	@Bean
+	/*@Bean
 	public DataSource getDatasource() {
-		// DataSourceBuilder.create().build();
-		// DataSourceBuilder.create().driverClassName("").username("").password("").url("").build();
-		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+		return  DataSourceBuilder.create()
+		 .driverClassName("com.mysql.cj.jdbc.Driver")
+		 .username("root")
+		 .password("root")
+		 .url("jdbc:mysql://localhost:3306/mysql")
+		 .build();
+		/*EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		builder.setType(EmbeddedDatabaseType.H2);
 		
 		EmbeddedDatabase db = builder.build();
 
-		return db;
 
-	}
+	}*/
 	@Bean
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
