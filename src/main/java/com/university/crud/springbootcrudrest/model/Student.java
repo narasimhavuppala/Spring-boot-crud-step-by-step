@@ -1,10 +1,11 @@
 package com.university.crud.springbootcrudrest.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -16,7 +17,9 @@ public class Student {
 	
 	@NotNull
 	String name;
-	String dob;
+	
+	
+	LocalDate dob=LocalDate.now();
 	
 	@Email
 	String email;
@@ -32,10 +35,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDob() {
+
+	public LocalDate getDob() {
 		return dob;
 	}
-	public void setDob(String dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 	public String getEmail() {

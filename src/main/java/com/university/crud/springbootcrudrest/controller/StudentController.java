@@ -35,7 +35,7 @@ public class StudentController {
 		return service.getStudent(id);
 	}
 
-	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
+	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE)
 	public Student save(@Valid Student obj) throws Exception {
 		System.out.println(obj.getId());
 		return service.save(obj);
