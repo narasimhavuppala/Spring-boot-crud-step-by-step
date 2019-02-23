@@ -8,7 +8,9 @@ server:
   port: 8090
 spring:
   jpa:
-    show-sql: true
+    show-sql: true  datasource:    type: com.zaxxer.hikari.HikariDataSource    hikari:      maximum-pool-size: 15
+      minimum-idle: 1500
+      pool-name: mypoolname
 management:
   endpoints:
     web:
