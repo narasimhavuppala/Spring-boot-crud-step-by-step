@@ -10,10 +10,10 @@ spring:
   jpa:
     show-sql: true
 management:
-  endpoint:
-    beans:
-      enabled: true
-      
+  endpoints:
+    web:
+      exposure:
+        include: beans,heapdump
 ---
 spring:
   profiles: dev
@@ -26,12 +26,8 @@ debug: false
 server:
   port: 8089
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include:
-        - env,info,beans
+
+        
 ---
 spring:
   profiles: test
