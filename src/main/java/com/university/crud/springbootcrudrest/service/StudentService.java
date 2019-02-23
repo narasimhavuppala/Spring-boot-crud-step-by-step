@@ -13,6 +13,9 @@ public class StudentService {
 	
 	@Autowired
 	Environment env;
+	
+	@Autowired
+	StudentJmsSender jmsStudent;
 
 	@Autowired
 	private StudentRepository repository;
@@ -29,7 +32,9 @@ public class StudentService {
 			throw new Exception("id is not valid");
 		}
 
-		return repository.save(obj);
+		Student persitedObject= repository.save(obj);
+		jmsStudent.pushStudentSave(persitedObject);
+		return persitedObject;
 
 	}
 
