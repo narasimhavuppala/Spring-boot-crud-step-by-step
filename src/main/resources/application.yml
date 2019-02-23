@@ -13,7 +13,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: beans,heapdump
+        include: "*"
 ---
 spring:
   profiles: dev
