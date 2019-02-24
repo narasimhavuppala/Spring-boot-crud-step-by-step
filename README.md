@@ -173,4 +173,35 @@ mvn spring-boot:run
 - @Size
 - @Past/@Future
 - @Negative/@Positive
+# Oracle Database conncecivtiy
+
+- download JAR freom below:
+
+	https://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html
+
+- Install to local repo:
+	
+	mvn install:install-file -Dfile=ojdbc6.jar  -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=12.1.0.1 -Dpackaging=jar
+- Add pom dependency
+		<dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>12.1.0.1</version>
+        </dependency>
+- create a user and give privilages
+
+		CREATE USER crud IDENTIFIED BY crud;
+
+		GRANT CONNECT TO crud;
+
+		GRANT CONNECT, RESOURCE, DBA TO crud;
+
+		GRANT CREATE SESSION TO crud;
+
+
+		GRANT UNLIMITED TABLESPACE TO crud;
+
+
+
+
 

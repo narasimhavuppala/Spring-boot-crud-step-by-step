@@ -22,6 +22,11 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    hibernate:      ddl-auto: none
+          
 server:
   port: 8089
 
@@ -29,6 +34,18 @@ server:
 ---
 spring:
   profiles: test
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: crud
+    password: crud
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.OracleDialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
 debug: false
 server:
   port: 8091

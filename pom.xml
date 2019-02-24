@@ -31,13 +31,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<!-- works with ORM to connect to RDBMS(Oracle,Mysql,Postgree,H2) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
+
 		<!-- Restful web services -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -50,14 +50,14 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- In Memory Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- testing support -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -76,14 +76,14 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-		
+
 		<!-- Content negotiation using XML:default JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-		
-		<!-- Drivwer to connec to MYSQL DB -->
+
+		<!-- Driver to connect to MYSQL DB -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -94,6 +94,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
+
+		<dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>12.1.0.1</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -104,6 +110,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
