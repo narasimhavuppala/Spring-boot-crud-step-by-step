@@ -2,15 +2,15 @@
 mvn spring-boot:run
 
 # Rest Endpoints 
-    - HTTP Methods
-	   - GET
-	   		- Pathparam
-	   		- RequestParam
-	   - PUT
-	   - POST
-	   - DELETE
-	 - HTTP Status codes
-	 - Mediatypes
+- HTTP Methods
+	- GET
+	   	- Pathparam
+	   	- RequestParam
+	- PUT
+	- POST
+	- DELETE
+	- HTTP Status codes
+	- Mediatypes
 	 	- Produces
 	 	- Consumes
 # Messaging Integration
