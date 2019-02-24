@@ -29,9 +29,6 @@ public class StudentService {
 
 	@Transactional
 	public Student save(Student obj) throws Exception {
-		if(obj.getId()==0) {
-			throw new Exception("id is not valid");
-		}
 
 		Student persitedObject= repository.save(obj);
 		jmsStudent.pushStudentSave(persitedObject);

@@ -25,7 +25,8 @@ spring:
   jpa:    properties:
       hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
-    hibernate:      ddl-auto: none
+    generate-ddl: true
+    hibernate:      ddl-auto: create
           
 server:
   port: 8089
@@ -43,9 +44,9 @@ spring:
     properties:
       hibernate.dialect: org.hibernate.dialect.OracleDialect
     show-sql: true
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
 debug: false
 server:
   port: 8091

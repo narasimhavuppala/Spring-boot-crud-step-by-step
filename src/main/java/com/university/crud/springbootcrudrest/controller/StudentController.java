@@ -54,6 +54,7 @@ public class StudentController {
 	public ResponseEntity<String> getExceptions(Throwable t) {
 		System.out.println(t.getMessage());
 		System.out.println("Error Occureded");
+		t.printStackTrace();
 		return new ResponseEntity<String>("Error occured: "+ t.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 
 	}
