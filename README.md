@@ -230,3 +230,7 @@ mvn spring-boot:run
 		public interface CourseRepository extends MongoRepository<Course, String> {
 			
 		}
+- 
+
+# Rest Consumers
+- http://www.groupkt.com/post/c9b0ccb9/country-and-other-related-rest-webservices.htm

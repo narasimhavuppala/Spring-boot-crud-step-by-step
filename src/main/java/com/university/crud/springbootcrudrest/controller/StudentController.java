@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ import com.university.crud.springbootcrudrest.service.StudentService;
 
 @RestController
 @RequestMapping("/student")
+@Secured(value= {"ADMIN"})
 public class StudentController {
 
 	@Autowired
@@ -36,6 +38,7 @@ public class StudentController {
 	}
 
 	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE)
+	
 	public Student save(@Valid Student obj) throws Exception {
 		System.out.println(obj.getId());
 		return service.save(obj);
