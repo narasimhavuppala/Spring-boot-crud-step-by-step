@@ -1,6 +1,5 @@
 # Spring-boot-crud-step-by-step
 mvn spring-boot:run
-# features
 
 # Rest Endpoints 
     - HTTP Methods
@@ -14,7 +13,33 @@ mvn spring-boot:run
 	 - Mediatypes
 	 	- Produces
 	 	- Consumes
-	 	
+# Messaging Integration
+    - add below Dependency
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+	- Create a seperate configuration classes
+		@Value("${spring.activemq.broker-url}")
+		private String brokerUrl;
+
+		@Bean
+		ActiveMQConnectionFactory getActiveMQ() {
+			ActiveMQConnectionFactory obj = new ActiveMQConnectionFactory("guest", "guest", "");
+			obj.setBrokerURL(brokerUrl);
+			return obj;
+
+		}
+
+		@Bean
+		JmsTemplate getJmsTemplate() {
+			return new JmsTemplate(getActiveMQ());
+		}
+
+		@Bean
+		public Queue queue() {
+			return new ActiveMQQueue("testqueue");
+		} 	
 # Swagger 
 	- Add dependencies in pom.xml
 	- Swagger API depedency
@@ -33,9 +58,10 @@ mvn spring-boot:run
 	 - logging.level.org.org.hibernate=WARN
 #   Actuator Endpoints
 		
-		- "http://localhost:8080/myapp/actuator"
+		- By default all actuator endpoints can be seen :
+		      "http://localhost:8080/myapp/actuator"
 		- By default Endpoints are disabled due to Secure data
-		- management.endpoints.web.exposure.include: "*"
+		- enable all endpoints by : management.endpoints.web.exposure.include: "*"
 		- Shutdown endpoint needs to be enabled. This will not be covered in all(*)
 # Spring Annotations
 		- @Component
@@ -72,4 +98,4 @@ mvn spring-boot:run
 	- @Size
 	- @Past/@Future
 	- @Negative/@Positive
-    - usage of tab
+
