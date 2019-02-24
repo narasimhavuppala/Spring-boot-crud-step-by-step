@@ -101,10 +101,10 @@ mvn spring-boot:run
 
 # Reading Properties Files inside the program
 - for Multiple Properties
-	@Autowired
-	Environment env; 
+		@Autowired
+		Environment env; 
 - for single property
-	@Value("property.name)
+		@Value("property.name)
 
 # Bean Validation
 - use @ Valid wherever it needs to be validated
