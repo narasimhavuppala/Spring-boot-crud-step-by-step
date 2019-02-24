@@ -1,7 +1,13 @@
 # Spring-boot-crud-step-by-step
 mvn spring-boot:run
 
-# Rest Endpoints 
+# Rest Endpoints
+- Add below Depndency
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 - HTTP Methods
 	- GET
 	   	- Pathparam
@@ -13,7 +19,7 @@ mvn spring-boot:run
 	- Mediatypes
 	 	- Produces
 	 	- Consumes
-# Messaging Integration
+# Messaging Integration with ActiveMQ
 - add below Dependency
 	    <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -33,7 +39,23 @@ mvn spring-boot:run
 		JmsTemplate getJmsTemplate() {
 			return new JmsTemplate(getActiveMQ());
 		}
+#  ORM Integration(hibenrate to Mysql/Oracle/Postgree/MS SQL/H2)
+- Add below Dependency
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+- Create a model with below Annotations
+	- @Entity
+	- @Id
+- Create a Repository
 	
+		@Repository
+		public interface StudentRepository extends JpaRepository<Student, Integer> {
+		//Code Generation Technique: DSL 
+		}
+
 # Swagger 
 -   Add dependencies in pom.xml
 -	Swagger API depedency & Swagger UI dependency		
