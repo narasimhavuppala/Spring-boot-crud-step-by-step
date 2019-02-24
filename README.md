@@ -60,6 +60,16 @@ mvn spring-boot:run
     - usage of tab
 
 # Reading Properties Files inside the progra
-	- 	Environment env; //for Multiple Properties
-	-  @Value("property.name) for single property
-  			
+	- Environment env; //for Multiple Properties
+	- @Value("property.name) for single property
+
+# Bean Validation
+    - use @ Valid wherever it needs to be validated
+    - @NotNull
+    - @Email
+	- @Min
+	- @Max
+	- @Size
+	- @Past/@Future
+	- @Negative/@Positive
+    - usage of tab
