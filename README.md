@@ -81,7 +81,7 @@ mvn spring-boot:run
 # Spring Annotations
 - @Component
 - @RestController
-- @Controller(Deprecated)
+- @RequestMapping
 - @Service
 - @Repository
 - @SpringBootApplication
@@ -99,9 +99,12 @@ mvn spring-boot:run
 - Conext path : Different Application name
 - usage of tab
 
-# Reading Properties Files inside the progra
-- Environment env; //for Multiple Properties
-- @Value("property.name) for single property
+# Reading Properties Files inside the program
+- for Multiple Properties
+	@Autowired
+	Environment env; 
+- for single property
+	@Value("property.name)
 
 # Bean Validation
 - use @ Valid wherever it needs to be validated

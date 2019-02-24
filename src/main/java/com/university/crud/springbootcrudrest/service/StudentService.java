@@ -20,6 +20,7 @@ public class StudentService {
 	@Autowired
 	private StudentRepository repository;
 
+	@Transactional(readOnly=true)
 	public Student getStudent(int id) {
 
 		return repository.getOne(id);

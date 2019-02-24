@@ -19,9 +19,7 @@ import com.university.crud.springbootcrudrest.model.Student;
 import com.university.crud.springbootcrudrest.service.StudentService;
 
 @RestController
-
-//http://localhost:8080/myapp/castudent
-@RequestMapping("/castudent")
+@RequestMapping("/student")
 public class StudentController {
 
 	@Autowired
