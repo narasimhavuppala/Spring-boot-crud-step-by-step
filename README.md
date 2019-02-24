@@ -22,17 +22,17 @@ mvn spring-boot:run
 - Create a seperate configuration classes
 
 
-	@Bean
-	ActiveMQConnectionFactory getActiveMQ() {
-		ActiveMQConnectionFactory obj = new ActiveMQConnectionFactory("username", "password", "");
-		obj.setBrokerURL(brokerUrl);
-		return obj;
-	}
+		@Bean
+		ActiveMQConnectionFactory getActiveMQ() {
+			ActiveMQConnectionFactory obj = new ActiveMQConnectionFactory("username", "password", "");
+			obj.setBrokerURL(brokerUrl);
+			return obj;
+		}
 
-	@Bean
-	JmsTemplate getJmsTemplate() {
-		return new JmsTemplate(getActiveMQ());
-	}
+		@Bean
+		JmsTemplate getJmsTemplate() {
+			return new JmsTemplate(getActiveMQ());
+		}
 	
 # Swagger 
 	-   Add dependencies in pom.xml
