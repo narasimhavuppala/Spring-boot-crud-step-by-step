@@ -1,5 +1,7 @@
 package com.university.crud.springbootcrudrest.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,11 @@ public class StudentController {
 	@DeleteMapping("/{id}")
 	public boolean deleteStudent(@PathVariable("id") int id) throws Exception {
          return service.delete(id);
+	}
+	
+	@GetMapping("/{name}/{age}")
+	public List<Student> findByNameOrAge(@PathVariable("name") String studentName,@PathVariable("age") int studentAge) throws Exception {
+         return service.findByNameOrAge(studentName, studentAge);
 	}
 
 	@ExceptionHandler(value = { Exception.class })

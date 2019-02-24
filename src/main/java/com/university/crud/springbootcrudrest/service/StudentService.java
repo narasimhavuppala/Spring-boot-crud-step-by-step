@@ -1,5 +1,7 @@
 package com.university.crud.springbootcrudrest.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -47,6 +49,10 @@ public class StudentService {
 		repository.deleteById(id);
 		jmsStudent.pushStringMessage("deleted Student with Id=" + 1);
 		return true;
+	}
+	
+	public List<Student> findByNameOrAge(String name,int age){
+		return repository.findByNameOrAge(name, age);
 	}
 
 }
