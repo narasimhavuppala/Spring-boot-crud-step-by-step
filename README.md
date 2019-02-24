@@ -17,11 +17,15 @@ mvn spring-boot:run
 	 	
 # Swagger 
 	- Add dependencies in pom.xml
+	- Swagger API depedency
+	- Swagger UI dependency
 	- Add @ Bean for DocketAPI
 	- open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
 # Datasource creation
 	 - @ Bean for Data Source
 	 - Embedded
+	 - Connection Pooling
+	 	- use for Hikari:  spring.datasource.type=com.zaxxer.hikari.HikariDataSource
 #  Log level Details
 	 - debug=false
 	 - logging.file=application.log
@@ -30,8 +34,9 @@ mvn spring-boot:run
 #   Actuator Endpoints
 		
 		- "http://localhost:8080/myapp/actuator"
-		- "http://localhost:8080/myapp/actuator/health"
-		- "http://localhost:8080/myapp/actuator/info"
+		- By default Endpoints are disabled due to Secure data
+		- management.endpoints.web.exposure.include: "*"
+		- Shutdown endpoint needs to be enabled. This will not be covered in all(*)
 # Spring Annotations
 		- @Component
 		- @RestController
@@ -46,14 +51,15 @@ mvn spring-boot:run
 # Dev tools
   			
 	- HMR(Hot Module Replacement)
+	- Ensures Restart of Project upon save
+	- It does not detect the pom.xml changes
 # YAML Usage
     - Spring profiles active
     - Server port
-    - Conext path
+    - Conext path : Different Application name
     - usage of tab
 
 # Reading Properties Files inside the progra
-	- 	
-	@Autowired
-	Environment env;
+	- 	Environment env; //for Multiple Properties
+	-  @Value("property.name) for single property
   			

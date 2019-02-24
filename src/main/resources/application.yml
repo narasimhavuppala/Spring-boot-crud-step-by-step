@@ -1,11 +1,8 @@
-debug: false
-trace: false
 logging:
-  file: application.log 
-    
+  file: application.log    
 server:
   servlet:
-    context-path: /myapp
+    context-path: /crudapp
   port: 8090
 spring:
   jpa:
@@ -24,8 +21,7 @@ spring:
     url: jdbc:mysql://localhost:3306/mysql
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-debug: false
+    driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 8089
 
