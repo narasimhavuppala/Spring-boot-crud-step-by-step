@@ -35,8 +35,8 @@ mvn spring-boot:run
 		}
 	
 # Swagger 
-	-   Add dependencies in pom.xml
-	-	Swagger API depedency & Swagger UI dependency		
+-   Add dependencies in pom.xml
+-	Swagger API depedency & Swagger UI dependency		
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -49,8 +49,9 @@ mvn spring-boot:run
 			<version>2.9.2</version>
 		</dependency>
 
-	-   Add @ Bean for DocketAPI
-	-   @Bean
+-   Add @ Bean for DocketAPI
+-   
+		@Bean
     	public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
@@ -58,7 +59,7 @@ mvn spring-boot:run
           .paths(PathSelectors.any())                          
           .build();                                           
    		 }
-	-   open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
+-	open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
 # Datasource creation
 	 - @ Bean for Data Source
 	 - Embedded
