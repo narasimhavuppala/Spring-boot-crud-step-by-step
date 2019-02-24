@@ -61,23 +61,51 @@ mvn spring-boot:run
           .build();                                           
    		 }
 -	open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
+
+
 # Datasource creation
-- @ Bean for Data Source
-- Embedded
+- @ Bean for Programatic Data Source
+- Embedded will be created if you add depedency
+	
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 - Connection Pooling
 - use for Hikari:  spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+- use the below config for Datasource
+
+		spring:
+		  datasource:
+			url: jdbc:mysql://localhost:3306/mysql
+			username: root
+			password: root
+			driver-class-name: com.mysql.cj.jdbc.Driver
+
+
 #  Log level Details
 - debug=false
 - logging.file=application.log
 - logging.level.org.springframework=INFO
 - logging.level.org.org.hibernate=WARN
+
+
 #   Actuator Endpoints
+- Add below Dependency in the pom.xml
 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>		
 - By default all actuator endpoints can be seen :
-		      "http://localhost:8080/myapp/actuator"
+		      "http://serveropaddress:port/context-path/actuator"
 - By default Endpoints are disabled due to Secure data
 - enable all endpoints by : management.endpoints.web.exposure.include: "*"
 - Shutdown endpoint needs to be enabled. This will not be covered in all(*)
+
+
+
 # Spring Annotations
 - @Component
 - @RestController
@@ -91,6 +119,12 @@ mvn spring-boot:run
 - @Transactional
 # Dev tools
 - HMR(Hot Module Replacement)
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 - Ensures Restart of Project upon save
 - It does not detect the pom.xml changes
 # YAML Usage
@@ -101,10 +135,12 @@ mvn spring-boot:run
 
 # Reading Properties Files inside the program
 - for Multiple Properties
-			@Autowired
-			Environment env; 
+
+		@Autowired
+		Environment env; 
 - for single property
-			@Value("property.name)
+			
+		@Value("property.name)
 
 # Bean Validation
 - use @ Valid wherever it needs to be validated
