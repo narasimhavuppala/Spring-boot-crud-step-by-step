@@ -12,18 +12,22 @@ import com.university.crud.springbootcrudrest.model.Student;
 public class StudentJmsSender {
 	@Autowired
 	JmsTemplate jmsTemplate;
-	
+
 	public void pushStudentSave(Student obj) {
-		ObjectMapper mapper=new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper();
 		try {
-			String studentObjJson=mapper.writeValueAsString(obj);
+			String studentObjJson = mapper.writeValueAsString(obj);
 			this.jmsTemplate.convertAndSend("testQueue", studentObjJson);
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
+	public void pushStringMessage(String message) {
+		this.jmsTemplate.convertAndSend("testQueue", message);
+
+	}
 
 }

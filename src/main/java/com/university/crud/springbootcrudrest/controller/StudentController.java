@@ -40,14 +40,14 @@ public class StudentController {
 
 	}
 
-	@PutMapping("/")
-	public Student updateStudent(@Valid Student obj) {
-		return obj;
+	@PutMapping("/{id}")
+	public Student updateStudent(@Valid Student obj,@PathVariable("id") int studentId) throws Exception {
+		return service.update(studentId,obj);
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteStudent(@PathVariable("id") int id) {
-
+	public boolean deleteStudent(@PathVariable("id") int id) throws Exception {
+         return service.delete(id);
 	}
 
 	@ExceptionHandler(value = { Exception.class })
