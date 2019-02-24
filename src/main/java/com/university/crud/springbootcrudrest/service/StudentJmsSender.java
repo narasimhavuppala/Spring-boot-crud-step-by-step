@@ -19,7 +19,6 @@ public class StudentJmsSender {
 			String studentObjJson = mapper.writeValueAsString(obj);
 			this.jmsTemplate.convertAndSend("testQueue", studentObjJson);
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

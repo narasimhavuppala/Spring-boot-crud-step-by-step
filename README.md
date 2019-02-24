@@ -210,4 +210,23 @@ mvn spring-boot:run
   START WITH 4
   INCREMENT BY 1;
 
+# MongoDB Integration
+- Add below dependency in pom.xml
 
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+- mention connection details in .yml file or(application.properties)
+
+		spring:
+		  data:
+			mongodb:
+			  host: localhost
+			  port: 27017
+			  database: courses
+- create a mongo Repository
+
+		public interface CourseRepository extends MongoRepository<Course, String> {
+			
+		}
