@@ -8,12 +8,16 @@ spring:
   jpa:
     show-sql: true  datasource:    type: com.zaxxer.hikari.HikariDataSource    hikari:      maximum-pool-size: 15
       minimum-idle: 1500
-      pool-name: mypoolname  activemq:    broker-url: tcp://localhost:61616
+      pool-name: mypoolname  activemq:    broker-url: tcp://localhost:61616  data:    mongodb:      host: localhost
+      port: 27017
+      database: courses
+ 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
 ---
 spring:
   profiles: dev
