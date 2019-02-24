@@ -8,6 +8,7 @@ mvn spring-boot:run
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
 - HTTP Methods
 	- GET
 	   	- Pathparam
@@ -82,7 +83,7 @@ mvn spring-boot:run
           .paths(PathSelectors.any())                          
           .build();                                           
    		 }
--	open url :http://localhost:<<port>>/<<context-path>>/swagger-ui.html
+-	open url :http://localhost:port/context-path/swagger-ui.html
 
 
 # Datasource creation
@@ -183,6 +184,7 @@ mvn spring-boot:run
 	
 	mvn install:install-file -Dfile=ojdbc6.jar  -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=12.1.0.1 -Dpackaging=jar
 - Add pom dependency
+		
 		<dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
