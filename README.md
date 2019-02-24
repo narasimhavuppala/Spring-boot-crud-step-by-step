@@ -14,32 +14,26 @@ mvn spring-boot:run
 	 	- Produces
 	 	- Consumes
 # Messaging Integration
-    - add below Dependency
+- add below Dependency
 	    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
-	-   Create a seperate configuration classes
-		@Value("${spring.activemq.broker-url}")
-		private String brokerUrl;
+- Create a seperate configuration classes
 
-		@Bean
-		ActiveMQConnectionFactory getActiveMQ() {
-			ActiveMQConnectionFactory obj = new ActiveMQConnectionFactory("guest", "guest", "");
-			obj.setBrokerURL(brokerUrl);
-			return obj;
 
-		}
+	@Bean
+	ActiveMQConnectionFactory getActiveMQ() {
+		ActiveMQConnectionFactory obj = new ActiveMQConnectionFactory("username", "password", "");
+		obj.setBrokerURL(brokerUrl);
+		return obj;
+	}
 
-		@Bean
-		JmsTemplate getJmsTemplate() {
-			return new JmsTemplate(getActiveMQ());
-		}
-
-		@Bean
-		public Queue queue() {
-			return new ActiveMQQueue("testqueue");
-		} 	
+	@Bean
+	JmsTemplate getJmsTemplate() {
+		return new JmsTemplate(getActiveMQ());
+	}
+	
 # Swagger 
 	-   Add dependencies in pom.xml
 	-	Swagger API depedency & Swagger UI dependency		
