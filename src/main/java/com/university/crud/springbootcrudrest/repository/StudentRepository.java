@@ -10,7 +10,7 @@ import com.university.crud.springbootcrudrest.model.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 //Code Generation Technique: DSL 
-	//DSL
+	//DSL: Domain Specific Language
 	public void deleteById(int id);
 	
 	public List<Student> findByNameOrAge(String name,int age);

@@ -26,13 +26,14 @@
 	</properties>
 
 	<dependencies>
-		<!-- runtime data of your application -->
+		<!-- runtime data of your application:similar to apple watch -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<!-- works with ORM to connect to RDBMS(Oracle,Mysql,Postgree,H2) -->
+		<!-- API : Application Programming interface : Hibenrate ,MyBatis,EclipseTopLink-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -51,7 +52,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- In Memory Database -->
+		<!-- In Memory Database:Derby and H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
