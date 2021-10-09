@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -22,7 +21,6 @@ public class Student {
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
 	//@SequenceGenerator(sequenceName = "student_seq", allocationSize = 1, name = "student_seq")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@ApiModelProperty(hidden = true)
 	int id;
 
 	@NotNull

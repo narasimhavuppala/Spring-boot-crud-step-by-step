@@ -1,4 +1,8 @@
 # Spring-boot-crud-step-by-step
+ # Pre Req
+ - docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
+ - http://localhost:15672/#/queues
+ - docker run -p 61616:61616 -p 8161:8161 rmohr/activemq
 mvn spring-boot:run
 
 # Rest Endpoints
