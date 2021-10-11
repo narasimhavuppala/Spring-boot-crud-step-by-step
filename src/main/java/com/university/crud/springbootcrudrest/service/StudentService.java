@@ -2,6 +2,7 @@ package com.university.crud.springbootcrudrest.service;
 
 import java.util.List;
 
+import com.university.crud.springbootcrudrest.messaging.StudentJmsSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;

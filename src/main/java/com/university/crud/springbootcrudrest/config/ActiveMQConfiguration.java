@@ -1,4 +1,4 @@
-package com.university.crud.springbootcrudrest.spring;
+package com.university.crud.springbootcrudrest.config;
 
 import javax.jms.Queue;
 

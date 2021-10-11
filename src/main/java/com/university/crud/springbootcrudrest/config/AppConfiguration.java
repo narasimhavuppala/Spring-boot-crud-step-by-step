@@ -1,6 +1,5 @@
-package com.university.crud.springbootcrudrest.spring;
+package com.university.crud.springbootcrudrest.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 

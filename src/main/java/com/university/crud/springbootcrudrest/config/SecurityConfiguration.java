@@ -1,4 +1,4 @@
-package com.university.crud.springbootcrudrest.spring;
+package com.university.crud.springbootcrudrest.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

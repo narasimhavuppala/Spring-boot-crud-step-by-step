@@ -1,4 +1,4 @@
-package com.university.crud.springbootcrudrest.service;
+package com.university.crud.springbootcrudrest.messaging;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;

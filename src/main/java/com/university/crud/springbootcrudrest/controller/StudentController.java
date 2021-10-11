@@ -23,7 +23,6 @@ import com.university.crud.springbootcrudrest.service.StudentService;
 
 @RestController
 @RequestMapping("/student")
-@Secured(value= {"ADMIN"})
 public class StudentController {
 
 	@Autowired
