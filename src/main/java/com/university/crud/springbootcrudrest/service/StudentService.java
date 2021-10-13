@@ -26,7 +26,7 @@ public class StudentService {
 	@Transactional(readOnly = true)
 	public Student getStudent(int id) {
 
-		return repository.getOne(id);
+		return repository.findById(id).get();
 
 	}
 

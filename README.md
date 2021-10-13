@@ -238,3 +238,7 @@ mvn spring-boot:run
 
 # Rest Consumers
 - http://www.groupkt.com/post/c9b0ccb9/country-and-other-related-rest-webservices.htm
+
+# Open API integration
+- http://localhost:8090/crudapp/swagger-ui.html
+- username is : admin& admin

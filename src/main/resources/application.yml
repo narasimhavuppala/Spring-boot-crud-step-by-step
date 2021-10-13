@@ -6,9 +6,18 @@ server:
   port: 8090
 spring:
   jpa:
-    show-sql: true  datasource:    type: com.zaxxer.hikari.HikariDataSource    hikari:      maximum-pool-size: 15
+    show-sql: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
       minimum-idle: 1500
-      pool-name: mypoolname  activemq:    broker-url: tcp://localhost:61616  data:    mongodb:      host: localhost
+      pool-name: mypoolname
+  activemq:
+    broker-url: tcp://localhost:61616
+  data:
+    mongodb:
+      host: localhost
       port: 27017
       database: courses
  
@@ -26,12 +35,15 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:    properties:
+  jpa:
+    properties:
       hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
     generate-ddl: false
-    hibernate:      ddl-auto: none
-          
+    hibernate:
+      ddl-auto: none
+    
+      
 server:
   port: 8089
 
@@ -54,6 +66,8 @@ spring:
 debug: false
 server:
   port: 8091
+springdoc:
+  packagesToScan: com.university.crud.springbootcrudrest
 ---
 spring:
   profiles: prod
