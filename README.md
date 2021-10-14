@@ -242,3 +242,28 @@ mvn spring-boot:run
 # Open API integration
 - http://localhost:8090/crudapp/swagger-ui.html
 - username is : admin& admin
+- yet to implement documentation Tasks
+
+# Features Awaiting
+ - Exception Handling 
+   	- Controller Specific
+ - AOP
+ - Auditing
+ - Oauth2 Integration
+    - password flow
+	- Authorization Code
+	- Client Credentials
+ - Vault Service Integration
+ - Spring Cloud Config Integration
+ - Resilient 4J integration
+ - CQRS integration
+ - Native Queries
+ - JDBC and Batch Support
+ - Spring Cloud Sleuth support
+ - Spring Micrometer integration
+ - Dockerizing this app
+ - K8S integration
+ - Making external calls to the app
+ - Jmeter Test cases
+ - API Integrations
+ 
