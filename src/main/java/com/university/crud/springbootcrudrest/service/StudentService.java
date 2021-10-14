@@ -3,24 +3,23 @@ package com.university.crud.springbootcrudrest.service;
 import java.util.List;
 
 import com.university.crud.springbootcrudrest.messaging.StudentJmsSender;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.university.crud.springbootcrudrest.model.Student;
 import com.university.crud.springbootcrudrest.repository.StudentRepository;
 
 @Service
+@NoArgsConstructor
 public class StudentService {
 
-	@Autowired
 	Environment env;
-
-	@Autowired
 	StudentJmsSender jmsStudent;
-
-	@Autowired
 	private StudentRepository repository;
 
 	@Transactional(readOnly = true)
@@ -30,7 +29,7 @@ public class StudentService {
 
 	}
 
-	@Transactional
+	@Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED,rollbackFor = Throwable.class)
 	public Student save(Student obj) throws Exception {
 		Student persitedObject = repository.save(obj);
 		jmsStudent.pushStudentSave(persitedObject);
