@@ -1,8 +1,8 @@
 package com.university.crud.springbootcrudrest.service;
 
-import java.util.List;
-
 import com.university.crud.springbootcrudrest.messaging.StudentJmsSender;
+import com.university.crud.springbootcrudrest.model.Student;
+import com.university.crud.springbootcrudrest.repository.StudentRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -11,12 +11,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.university.crud.springbootcrudrest.model.Student;
-import com.university.crud.springbootcrudrest.repository.StudentRepository;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import javax.validation.Valid;
+import java.util.List;
 
 @Service
 @NoArgsConstructor

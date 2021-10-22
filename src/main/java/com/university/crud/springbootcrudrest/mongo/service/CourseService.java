@@ -1,12 +1,11 @@
 package com.university.crud.springbootcrudrest.mongo.service;
 
-import java.util.List;
-
+import com.university.crud.springbootcrudrest.mongo.model.Course;
+import com.university.crud.springbootcrudrest.mongo.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.university.crud.springbootcrudrest.mongo.model.Course;
-import com.university.crud.springbootcrudrest.mongo.repository.CourseRepository;
+import java.util.List;
 
 @Service
 public class CourseService {

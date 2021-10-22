@@ -1,13 +1,10 @@
 package com.university.crud.springbootcrudrest.repository;
 
-import java.util.List;
-
+import com.university.crud.springbootcrudrest.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.university.crud.springbootcrudrest.model.Student;
-
-import javax.persistence.NamedQueries;
+import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
