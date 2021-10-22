@@ -7,9 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.university.crud.springbootcrudrest.model.Student;
 
+import javax.persistence.NamedQueries;
+
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
-//Code Generation Technique: DSL 
+    //Code Generation Technique: DSL
 	//DSL: Domain Specific Language
 	public void deleteById(int id);
 	

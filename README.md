@@ -3,7 +3,8 @@
  - docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
  - http://localhost:15672/#/queues
  - docker run -p 61616:61616 -p 8161:8161 rmohr/activemq
-mvn spring-boot:run
+ - Start Mongo Server
+ - mvn spring-boot:run
 
 # Rest Endpoints
 - Add below Depndency
@@ -266,4 +267,17 @@ mvn spring-boot:run
  - Making external calls to the app
  - Jmeter Test cases
  - API Integrations
+ - GraphQL
+ - WebFlux
+ - Web Socket
+ - Caching Using Redis and EHcache 
+ - Open Shift Integration
+ - File Upload
+ - Encryption utilities
+ - Base 64 encryption
+ - HAL Media types
+ - Actuator End points 
+ - Encrypting 
+ - Custom Logging: Specifying the logger
+
  

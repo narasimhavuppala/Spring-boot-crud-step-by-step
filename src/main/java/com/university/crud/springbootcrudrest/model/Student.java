@@ -12,69 +12,32 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.university.crud.springbootcrudrest.model.base.BaseEntity;
+import lombok.*;
 
 
 @Entity
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-public class Student {
-	@Id
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
-	//@SequenceGenerator(sequenceName = "student_seq", allocationSize = 1, name = "student_seq")
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	int id;
+@Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@AllArgsConstructor
+@NoArgsConstructor
+public class Student extends BaseEntity {
+    @Id
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
+    //@SequenceGenerator(sequenceName = "student_seq", allocationSize = 1, name = "student_seq")
+   // @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-	@NotNull
-	String name;
+    @NotNull
+    private String name;
 
-	@FutureOrPresent
-	LocalDate dob = LocalDate.now();
+    //@FutureOrPresent
+    private LocalDate dob;
 
-	@Email
-	String email;
-	
-	@Min(value=18,message="Age must be greater thyan 18 to get admission")
-	int age;
+    @Email
+    private String email;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	
+    @Min(value = 18, message = "Age must be greater than 18 to get admission")
+    private int age;
 
 }

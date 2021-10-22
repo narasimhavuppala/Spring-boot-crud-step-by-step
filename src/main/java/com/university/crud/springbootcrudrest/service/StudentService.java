@@ -13,46 +13,55 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.university.crud.springbootcrudrest.model.Student;
 import com.university.crud.springbootcrudrest.repository.StudentRepository;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import javax.validation.Valid;
 
 @Service
 @NoArgsConstructor
 public class StudentService {
 
-	Environment env;
-	StudentJmsSender jmsStudent;
-	private StudentRepository repository;
+    @Autowired
+    Environment env;
 
-	@Transactional(readOnly = true)
-	public Student getStudent(int id) {
+    @Autowired
+    StudentJmsSender jmsStudent;
 
-		return repository.findById(id).get();
+    @Autowired
+    private StudentRepository repository;
 
-	}
+    @Transactional(readOnly = true)
+    public Student getStudent(int id) {
 
-	@Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED,rollbackFor = Throwable.class)
-	public Student save(Student obj) throws Exception {
-		Student persitedObject = repository.save(obj);
-		jmsStudent.pushStudentSave(persitedObject);
-		return persitedObject;
-	}
+        return repository.findById(id).get();
 
-	@Transactional
-	public Student update(int id,Student obj) throws Exception {
-		obj.setId(id);
-		Student persitedObject= repository.save(obj);
-		jmsStudent.pushStudentSave(persitedObject);
-		return persitedObject;
-	}
+    }
 
-	@Transactional
-	public boolean delete(int id) throws Exception {
-		repository.deleteById(id);
-		jmsStudent.pushStringMessage("deleted Student with Id=" + 1);
-		return true;
-	}
-	
-	public List<Student> findByNameOrAge(String name,int age){
-		return repository.findByNameOrAge(name, age);
-	}
+    @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, rollbackFor = Throwable.class)
+    public Student save(Student obj) throws Exception {
+        Student persitedObject = repository.save(obj);
+        jmsStudent.pushStudentSave(persitedObject);
+        return persitedObject;
+    }
+
+    @Transactional
+    public Student update(int id, Student obj) throws Exception {
+        obj.setId(id);
+        Student persitedObject = repository.save(obj);
+        jmsStudent.pushStudentSave(persitedObject);
+        return persitedObject;
+    }
+
+    @Transactional
+    public boolean delete(int id) throws Exception {
+        repository.deleteById(id);
+        jmsStudent.pushStringMessage("deleted Student with Id=" + 1);
+        return true;
+    }
+
+    public List<Student> findByNameOrAge(String name, int age) {
+        return repository.findByNameOrAge(name, age);
+    }
 
 }
