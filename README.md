@@ -179,7 +179,7 @@
 - @Size
 - @Past/@Future
 - @Negative/@Positive
-# Oracle Database conncecivtiy
+# Oracle Database connectivti
 
 - download JAR freom below:
 
@@ -249,7 +249,7 @@
  - Exception Handling 
    	- Controller Specific
  - AOP
- - Auditing
+ - Auditing...Added Auditing 
  - Oauth2 Integration
     - password flow
 	- Authorization Code
@@ -262,22 +262,32 @@
  - JDBC and Batch Support
  - Spring Cloud Sleuth support
  - Spring Micrometer integration
- - Dockerizing this app
+ - Dockerized this app
  - K8S integration
  - Making external calls to the app
  - Jmeter Test cases
  - API Integrations
  - GraphQL
  - WebFlux
- - Web Socket
+
  - Caching Using Redis and EHcache 
  - Open Shift Integration
- - File Upload
+   # Rest
+ 	- File Upload
+	- Web Socket
  - Encryption utilities
  - Base 64 encryption
  - HAL Media types
  - Actuator End points 
  - Encrypting 
  - Custom Logging: Specifying the logger
+ - Many to Many mapping 
+ - two data sources in the same project
+ - Unit Test cases
+ - Spring AOP
+   	
+	- Before
+	- After
+	- Around 
 
  

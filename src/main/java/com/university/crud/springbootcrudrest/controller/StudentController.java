@@ -2,6 +2,9 @@ package com.university.crud.springbootcrudrest.controller;
 
 import com.university.crud.springbootcrudrest.model.Student;
 import com.university.crud.springbootcrudrest.service.StudentService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,13 +16,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@Tag(name = "student service  for API", description = "controller for the service ")
 public class StudentController {
 
     @Autowired
     private StudentService service;
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    // web and Backends....Mobile apps...Use JSON Format
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = " Successful"),
+            @ApiResponse(responseCode = "401", description = "UnAuthorized")
+    })
     public Student getStudent(@PathVariable("id") int id) {
         System.out.println(id);
 
