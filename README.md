@@ -7,7 +7,7 @@
  - mvn spring-boot:run
 
 # Rest Endpoints
-- Add below Depndency
+- Add below Dependency
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -179,7 +179,7 @@
 - @Size
 - @Past/@Future
 - @Negative/@Positive
-# Oracle Database connectivti
+# Oracle Database connectivtity
 
 - download JAR freom below:
 
