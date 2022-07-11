@@ -1,0 +1,76 @@
+logging:
+  file: application.log    
+server:
+  servlet:
+    context-path: /crudapp
+  port: 8090
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 1500
+      pool-name: mypoolname
+  activemq:
+    broker-url: tcp://localhost:61616
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: courses
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    
+      
+server:
+  port: 8089
+
+        
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: crud
+    password: crud
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.OracleDialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+debug: false
+server:
+  port: 8091
+springdoc:
+  packagesToScan: com.university.crud.springbootcrudrest
+---
+spring:
+  profiles: prod
+debug: false
+server:
+  port: 8091
